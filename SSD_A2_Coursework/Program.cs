@@ -16,7 +16,7 @@ namespace SSD_A2_Coursework
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmAddCustomer());
         }
 
         private static void SetupDataDictionaryPath()
