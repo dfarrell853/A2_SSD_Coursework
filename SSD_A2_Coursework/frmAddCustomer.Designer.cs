@@ -177,6 +177,7 @@ namespace SSD_A2_Coursework
             this.Controls.Add(this.lblFirstname);
             this.Name = "frmAddCustomer";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmAddCustomer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

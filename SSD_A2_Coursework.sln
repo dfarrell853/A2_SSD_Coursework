@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSD_A2_Coursework", "SSD_A2_Coursework\SSD_A2_Coursework.csproj", "{A202DA5E-DE76-4C03-997B-D14DC98C08D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A2_SSD_Coursework", "SSD_A2_Coursework\A2_SSD_Coursework.csproj", "{A202DA5E-DE76-4C03-997B-D14DC98C08D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

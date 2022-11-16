@@ -21,11 +21,11 @@ namespace SSD_A2_Coursework.DAL
                 using (SqlCommand insertCommand = new SqlCommand("INSERT INTO Customer VALUES(@CustomerFirstname,@CustomerSurname,@CustomerDOB,@CustomerAddress,@CustomerTown,@CustomerCounty)", connection))
                 {
                     insertCommand.Parameters.AddWithValue("@CustomerFirstname", CustomerFirstname);
-                    insertCommand.Parameters.AddWithValue("@CustomerSurname", CustomerFirstname);
-                    insertCommand.Parameters.AddWithValue("@CustomerDOB", CustomerFirstname);
-                    insertCommand.Parameters.AddWithValue("@CustomerAddress", CustomerFirstname);
-                    insertCommand.Parameters.AddWithValue("@CustomerTown", CustomerFirstname);
-                    insertCommand.Parameters.AddWithValue("@CustomerCounty", CustomerFirstname);
+                    insertCommand.Parameters.AddWithValue("@CustomerSurname", CustomerSurname);
+                    insertCommand.Parameters.AddWithValue("@CustomerDOB", CustomerDOB);
+                    insertCommand.Parameters.AddWithValue("@CustomerAddress", CustomerAddress);
+                    insertCommand.Parameters.AddWithValue("@CustomerTown", CustomerTown);
+                    insertCommand.Parameters.AddWithValue("@CustomerCounty", CustomerCounty);
                     int rows = insertCommand.ExecuteNonQuery();
                     return rows;
                 }
