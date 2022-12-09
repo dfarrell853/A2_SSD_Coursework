@@ -20,7 +20,7 @@ namespace SSD_A2_Coursework
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            if (txtFirstname.Text|txtSurname.Text|txtDOB.Text|txtAddress.Text|txtTown.Text|txtCounty.Text =null)
+            if(txtFirstname.Text!=""|txtSurname.Text!=""|txtDOB.Text!=""|txtAddress.Text!=""|txtTown.Text!=""|txtCounty.Text!="")
             {
                 DateTime CustomerDOB = Convert.ToDateTime(txtDOB.Text);
                 CustomerDOB.ToShortDateString();
@@ -28,6 +28,7 @@ namespace SSD_A2_Coursework
                 if (RowsAffected == 1)
                 {
                     MessageBox.Show("Customer Added");
+                    RefreshDataGrid();
                 }
                 else
                 {
@@ -36,13 +37,20 @@ namespace SSD_A2_Coursework
             }
             else
             {
-                MessageBox.Show("Enter a firstname");  
+                MessageBox.Show("Enter a firstname");
+               
             }
         }
 
         private void frmAddCustomer_Load(object sender, EventArgs e)
         {
-
+            // TODO: This line of code loads data into the 'custRecordsSimpsonsDBDataSet.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.custRecordsSimpsonsDBDataSet.Customer);
+            RefreshDataGrid();
+        }
+        private void RefreshDataGrid()
+        {
+            this.customerTableAdapter.Fill(this.custRecordsSimpsonsDBDataSet.Customer);
         }
     }
 }

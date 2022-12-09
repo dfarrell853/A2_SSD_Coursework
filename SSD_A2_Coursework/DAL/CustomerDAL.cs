@@ -29,10 +29,28 @@ namespace SSD_A2_Coursework.DAL
                     int rows = insertCommand.ExecuteNonQuery();
                     return rows;
                 }
+            }                
+        }
+        public static int EditCustomer(int selectedCustID, string CustomerFirstname, string CustomerSurname, DateTime CustomerDOB, string CustomerAddress, string CustomerTown, string CustomerCounty )
+        {
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (SqlCommand editCommand = new SqlCommand("UPDATE Customer SET CustomerFirstname=@CustomerFirstname, CustomerSurname=@CustomerSurname, DOB=@CustomerDOB, CustomerAddress=@CustomerAddress, CustomerTown=@CustomerTown, CustomerCounty=@CustomerCounty" + "WHERE CustomerID=@selectedCustID", connection))
+                {
+                    editCommand.Parameters.AddWithValue("@CustomerFirstname", CustomerFirstname);
+                    editCommand.Parameters.AddWithValue("@CustomerSurname", CustomerSurname);
+                    editCommand.Parameters.AddWithValue("@CustomerDOB", CustomerDOB);
+                    editCommand.Parameters.AddWithValue("@CustomerAddress", CustomerAddress);
+                    editCommand.Parameters.AddWithValue("@CustomerTown", CustomerTown);
+                    editCommand.Parameters.AddWithValue("@CustomerCounty", CustomerCounty);
+                    editCommand.Parameters.AddWithValue("@selectedCustID", selectedCustID);
+                    int rows = editCommand.ExecuteNonQuery();
+                    return rows;
+                }
             }
             
-
-            
         }
+
     }
 }
