@@ -51,9 +51,6 @@ namespace SSD_A2_Coursework
             this.custRecordsSimpsonsDBDataSet1 = new SSD_A2_Coursework.CustRecordsSimpsonsDBDataSet1();
             this.customerTableAdapter1 = new SSD_A2_Coursework.CustRecordsSimpsonsDBDataSet1TableAdapters.CustomerTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.simpsonsDBDataSet1 = new SSD_A2_Coursework.SimpsonsDBDataSet1();
-            this.customerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.customerTableAdapter2 = new SSD_A2_Coursework.SimpsonsDBDataSet1TableAdapters.CustomerTableAdapter();
             this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerFirstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,13 +58,17 @@ namespace SSD_A2_Coursework
             this.customerAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerTownDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerCountyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.simpsonsDBDataSet1 = new SSD_A2_Coursework.SimpsonsDBDataSet1();
+            this.customerTableAdapter2 = new SSD_A2_Coursework.SimpsonsDBDataSet1TableAdapters.CustomerTableAdapter();
+            this.btnDeleteCustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.simpsonsDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.custRecordsSimpsonsDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpsonsDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpsonsDBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // simpsonsDBDataSet
@@ -86,7 +87,7 @@ namespace SSD_A2_Coursework
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(24, 470);
+            this.btnAddCustomer.Location = new System.Drawing.Point(26, 378);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(284, 93);
             this.btnAddCustomer.TabIndex = 25;
@@ -202,7 +203,7 @@ namespace SSD_A2_Coursework
             // 
             // btnEditCustomer
             // 
-            this.btnEditCustomer.Location = new System.Drawing.Point(349, 469);
+            this.btnEditCustomer.Location = new System.Drawing.Point(350, 378);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(279, 94);
             this.btnEditCustomer.TabIndex = 26;
@@ -245,20 +246,6 @@ namespace SSD_A2_Coursework
             this.dataGridView1.Size = new System.Drawing.Size(441, 560);
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // simpsonsDBDataSet1
-            // 
-            this.simpsonsDBDataSet1.DataSetName = "SimpsonsDBDataSet1";
-            this.simpsonsDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerBindingSource2
-            // 
-            this.customerBindingSource2.DataMember = "Customer";
-            this.customerBindingSource2.DataSource = this.simpsonsDBDataSet1;
-            // 
-            // customerTableAdapter2
-            // 
-            this.customerTableAdapter2.ClearBeforeFill = true;
             // 
             // customerIDDataGridViewTextBoxColumn
             // 
@@ -317,11 +304,36 @@ namespace SSD_A2_Coursework
             this.customerCountyDataGridViewTextBoxColumn.Name = "customerCountyDataGridViewTextBoxColumn";
             this.customerCountyDataGridViewTextBoxColumn.Width = 125;
             // 
+            // customerBindingSource2
+            // 
+            this.customerBindingSource2.DataMember = "Customer";
+            this.customerBindingSource2.DataSource = this.simpsonsDBDataSet1;
+            // 
+            // simpsonsDBDataSet1
+            // 
+            this.simpsonsDBDataSet1.DataSetName = "SimpsonsDBDataSet1";
+            this.simpsonsDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // customerTableAdapter2
+            // 
+            this.customerTableAdapter2.ClearBeforeFill = true;
+            // 
+            // btnDeleteCustomer
+            // 
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(189, 493);
+            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(295, 81);
+            this.btnDeleteCustomer.TabIndex = 28;
+            this.btnDeleteCustomer.Text = "Delete Customer";
+            this.btnDeleteCustomer.UseVisualStyleBackColor = true;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
+            // 
             // FrmPracticeEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1119, 597);
+            this.Controls.Add(this.btnDeleteCustomer);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.btnAddCustomer);
@@ -345,8 +357,8 @@ namespace SSD_A2_Coursework
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.custRecordsSimpsonsDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpsonsDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpsonsDBDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +396,6 @@ namespace SSD_A2_Coursework
         private System.Windows.Forms.DataGridViewTextBoxColumn customerAddressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerTownDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerCountyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnDeleteCustomer;
     }
 }
